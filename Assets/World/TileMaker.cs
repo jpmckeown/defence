@@ -6,12 +6,12 @@ public class TileMaker : MonoBehaviour
 {
     [SerializeField] int width = 5;
     [SerializeField] int height = 5;
-    [SerializeField] int cellSize = 10;
+    [SerializeField] public int cellSize = 10;
     [SerializeField] Tile tile;
 
     void Start()
     {
-        MakeTiles();
+        // MakeTiles();
     }
 
     void MakeTiles()
