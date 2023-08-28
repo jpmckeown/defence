@@ -41,6 +41,6 @@ public class TileLabel : MonoBehaviour
 
     void UpdateObjectName()
     {
-        // transform.parent.name = "Tile";
+        transform.parent.name = coordinates.ToString();
     }
 }

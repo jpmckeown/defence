@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class TileMaker : MonoBehaviour
 {
     [SerializeField] int width = 5;
@@ -11,7 +12,7 @@ public class TileMaker : MonoBehaviour
 
     void Start()
     {
-        // MakeTiles();
+        // MakeTiles(); // currently not used in play mode
     }
 
     void MakeTiles()
@@ -21,7 +22,7 @@ public class TileMaker : MonoBehaviour
             for (int j = 0; j < height; j++)
             {
                 var spawnedTile = Instantiate(tile, new Vector3(i * tileSize, 0, j * tileSize), Quaternion.identity);
-                spawnedTile.name = $"Tile {i} {j}";
+                spawnedTile.name = $"{i},{j}";
             }
         }
     }
