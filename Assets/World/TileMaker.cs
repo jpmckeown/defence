@@ -6,7 +6,7 @@ public class TileMaker : MonoBehaviour
 {
     [SerializeField] int width = 5;
     [SerializeField] int height = 5;
-    [SerializeField] public int cellSize = 10;
+    [SerializeField] public int tileSize = 10;
     [SerializeField] Tile tile;
 
     void Start()
@@ -20,7 +20,7 @@ public class TileMaker : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                var spawnedTile = Instantiate(tile, new Vector3(i * cellSize, 0, j * cellSize), Quaternion.identity);
+                var spawnedTile = Instantiate(tile, new Vector3(i * tileSize, 0, j * tileSize), Quaternion.identity);
                 spawnedTile.name = $"Tile {i} {j}";
             }
         }

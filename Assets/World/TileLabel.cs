@@ -15,7 +15,7 @@ public class TileLabel : MonoBehaviour
     {
         tileMaker = FindObjectOfType<TileMaker>();
         label = GetComponent<TextMeshPro>();
-        label.enabled = false;
+        label.enabled = false; // default is to not show coordinates label 
         DisplayCoordinates();
     }
 
@@ -25,18 +25,18 @@ public class TileLabel : MonoBehaviour
         {
             DisplayCoordinates();
             UpdateObjectName();
-            label.enabled = true;
+            label.enabled = true; // show while editing
         }
     }
 
     void DisplayCoordinates()
     {
-        // if (tileMaker == null) { return; }
+        if (tileMaker == null) { return; }
 
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / tileMaker.cellSize);
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / tileMaker.cellSize);
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / tileMaker.tileSize);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / tileMaker.tileSize);
 
-        label.text = "--,--"; // coordinates.x + "," + coordinates.y; //
+        label.text = coordinates.x + "," + coordinates.y;
     }
 
     void UpdateObjectName()
