@@ -54,6 +54,7 @@ public class GridManager : MonoBehaviour
 
     public Vector3 GetPositionFromCoordinates(Vector2Int coordinates)
     {
+        Debug.Log($"GetPos {tileMaker.tileSize}");
         Vector3 position = new Vector3();
         position.x = coordinates.x * tileMaker.tileSize;
         position.z = coordinates.y * tileMaker.tileSize;
@@ -62,12 +63,14 @@ public class GridManager : MonoBehaviour
 
     void CreateGrid()
     {
+        Debug.Log($"CreateGrid {tileMaker.worldSize.x} {tileMaker.worldSize.y}");
         for (int x = 0; x < tileMaker.worldSize.x; x++)
         {
             for (int y = 0; y < tileMaker.worldSize.y; y++)
             {
                 Vector2Int coordinates = new Vector2Int(x, y);
                 grid.Add(coordinates, new Node(coordinates, true));
+                Debug.Log($"dict {x} {y} {coordinates}");
             }
         }
     }

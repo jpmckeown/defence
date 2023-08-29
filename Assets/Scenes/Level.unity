@@ -4617,8 +4617,9 @@ GameObject:
   m_Component:
   - component: {fileID: 333558391}
   - component: {fileID: 333558392}
+  - component: {fileID: 333558393}
   m_Layer: 0
-  m_Name: IntruderPool
+  m_Name: EnemyPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4653,6 +4654,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCoordinates: {x: 0, y: 0}
   destinationCoordinates: {x: 11, y: 4}
+--- !u!114 &333558393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333558390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf2ae2199eb4d847b101e2de5c806ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 8718815765410211249, guid: 0ebc98131729d234787508a322a3bcc1, type: 3}
+  poolSize: 3
+  spawnTimer: 4
 --- !u!1 &335600605
 GameObject:
   m_ObjectHideFlags: 0
